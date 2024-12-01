@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://52tuvj3e3a7h"]
+
+[ext_resource type="Script" path="res://scripts/unattached_scripts/inventory_item.gd" id="1_tqrqi"]
+[ext_resource type="Texture2D" uid="uid://cjns6q83ms86e" path="res://sprites/item_icons/iron_item.png" id="2_pvrpo"]
+
+[resource]
+script = ExtResource("1_tqrqi")
+item_type = 8
+scene_path = "res://scenes/items/iron_item.tscn"
+is_tool = false
+texture = ExtResource("2_pvrpo")
+base_price = 20

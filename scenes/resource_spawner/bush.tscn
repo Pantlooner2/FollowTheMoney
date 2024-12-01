@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://luqxugfcaan8"]
+
+[ext_resource type="PackedScene" uid="uid://col5ox71tybl1" path="res://components/resource_creator_component.tscn" id="1_dhsjy"]
+[ext_resource type="Script" path="res://scripts/bush.gd" id="1_ihdot"]
+[ext_resource type="PackedScene" uid="uid://c1a4m2s5nfvyg" path="res://scenes/items/leaf_item.tscn" id="2_j5q3n"]
+[ext_resource type="Texture2D" uid="uid://bkulm2l86fden" path="res://sprites/Bushes/Bush-2.png" id="4_u58t7"]
+[ext_resource type="Texture2D" uid="uid://cqeqvaiao7jbx" path="res://sprites/Bushes/Bush-1.png" id="5_irwgo"]
+[ext_resource type="Texture2D" uid="uid://b5185vks6y8aq" path="res://sprites/Bushes/Bush-3.png" id="6_odir5"]
+[ext_resource type="Texture2D" uid="uid://cekdk3qs1fd0a" path="res://sprites/Bushes/Bush-4.png" id="7_au6di"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a5g8y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_u58t7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_irwgo")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"die",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_odir5")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_au6di")
+}],
+"loop": false,
+"name": &"idle2",
+"speed": 5.0
+}]
+
+[node name="Bush" type="Node2D"]
+script = ExtResource("1_ihdot")
+
+[node name="ResourceCreatorComponent" parent="." instance=ExtResource("1_dhsjy")]
+spawned_item = ExtResource("2_j5q3n")
+item_name = 9
+max_num_spawn = 5
+min_num_spawn = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_a5g8y")
+animation = &"die"
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

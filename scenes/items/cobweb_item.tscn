@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhoktx1wkn6j8"]
+
+[ext_resource type="PackedScene" uid="uid://bl84jcw2da28g" path="res://components/item_collectible_component.tscn" id="1_ou242"]
+[ext_resource type="Resource" uid="uid://byn3p0ondytyt" path="res://inventory/item_resources/cobweb.tres" id="2_q2lde"]
+
+[node name="CobwebItem" type="Node2D"]
+
+[node name="ItemCollectibleComponent" parent="." instance=ExtResource("1_ou242")]
+item = ExtResource("2_q2lde")

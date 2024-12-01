@@ -1,0 +1,417 @@
+[gd_scene load_steps=23 format=3 uid="uid://br0gtx20bi1kk"]
+
+[ext_resource type="Script" path="res://scripts/shop.gd" id="1_1itho"]
+[ext_resource type="Texture2D" uid="uid://ylp8aarpi8dd" path="res://sprites/Korper_Rauber.png" id="1_dq74y"]
+[ext_resource type="Texture2D" uid="uid://bk6xdojl14ee4" path="res://sprites/shack.png" id="2_y8ur5"]
+[ext_resource type="Script" path="res://scripts/inventory_ui.gd" id="4_ojan8"]
+[ext_resource type="Texture2D" uid="uid://cd070kxewdn8p" path="res://sprites/Retro Inventory/Inventory_9Slices.png" id="5_fkb4w"]
+[ext_resource type="PackedScene" uid="uid://ddh58vrskxidi" path="res://scenes/inventory_ui_slot.tscn" id="6_c2x4o"]
+[ext_resource type="Texture2D" uid="uid://dfmf1b34ngici" path="res://sprites/Retro Inventory/Inventory_Slot_1.png" id="7_00rh2"]
+[ext_resource type="Texture2D" uid="uid://bk5hsk677x7y5" path="res://sprites/Retro Inventory/Inventory_Slot_sell.png" id="8_h1uof"]
+[ext_resource type="Texture2D" uid="uid://rcpsa5mfg6h4" path="res://sprites/InventoryUI.png" id="10_2rrw3"]
+[ext_resource type="Texture2D" uid="uid://bkr7ptdhglfjg" path="res://sprites/InventorySlot.png" id="11_ixpnh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p5bk6"]
+size = Vector2(34, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15sup"]
+atlas = ExtResource("1_dq74y")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_beb7f"]
+atlas = ExtResource("1_dq74y")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aos0q"]
+atlas = ExtResource("1_dq74y")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_di38m"]
+atlas = ExtResource("1_dq74y")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55br3"]
+atlas = ExtResource("1_dq74y")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r84ig"]
+atlas = ExtResource("1_dq74y")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ug3t8"]
+atlas = ExtResource("1_dq74y")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8nwro"]
+atlas = ExtResource("1_dq74y")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gr31"]
+atlas = ExtResource("1_dq74y")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0gw0e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15sup")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_beb7f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aos0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_di38m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aos0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_beb7f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aos0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_di38m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aos0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_beb7f")
+}],
+"loop": false,
+"name": &"idle1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55br3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r84ig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55br3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r84ig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55br3")
+}],
+"loop": false,
+"name": &"idle2",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ug3t8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8nwro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55br3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8gr31")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ug3t8")
+}],
+"loop": false,
+"name": &"idle3",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jenut"]
+size = Vector2(128, 128)
+
+[node name="Shop" type="Node2D"]
+script = ExtResource("1_1itho")
+
+[node name="InteractionZone" type="Area2D" parent="."]
+visible = false
+position = Vector2(0, 74)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone"]
+shape = SubResource("RectangleShape2D_p5bk6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-6, 28)
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_0gw0e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_y8ur5")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_jenut")
+
+[node name="AnimTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="ShopInventoryUI" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchor_left = 0.336
+anchor_top = 0.468
+anchor_right = 0.678
+anchor_bottom = 0.932
+offset_left = 11.928
+offset_top = -0.264016
+offset_right = 11.944
+offset_bottom = 0.0639734
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_ojan8")
+inv_path = "res://inventory/shop_inventory.tres"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/ShopInventoryUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_fkb4w")
+patch_margin_left = 18
+patch_margin_top = 18
+patch_margin_right = 18
+patch_margin_bottom = 18
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/ShopInventoryUI/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = 18.0
+offset_right = 21.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 90
+theme_override_constants/v_separation = 90
+columns = 4
+
+[node name="InventoryUISlot" parent="CanvasLayer/ShopInventoryUI/NinePatchRect/GridContainer" instance=ExtResource("6_c2x4o")]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ShopInventoryUI/NinePatchRect/GridContainer/InventoryUISlot"]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("7_00rh2")
+centered = false
+
+[node name="InventoryUISlot2" parent="CanvasLayer/ShopInventoryUI/NinePatchRect/GridContainer" instance=ExtResource("6_c2x4o")]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ShopInventoryUI/NinePatchRect/GridContainer/InventoryUISlot2"]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("7_00rh2")
+centered = false
+
+[node name="InventoryUISlot3" parent="CanvasLayer/ShopInventoryUI/NinePatchRect/GridContainer" instance=ExtResource("6_c2x4o")]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ShopInventoryUI/NinePatchRect/GridContainer/InventoryUISlot3"]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("7_00rh2")
+centered = false
+
+[node name="InventoryUISlot4" parent="CanvasLayer/ShopInventoryUI/NinePatchRect/GridContainer" instance=ExtResource("6_c2x4o")]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ShopInventoryUI/NinePatchRect/GridContainer/InventoryUISlot4"]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("7_00rh2")
+centered = false
+
+[node name="InventoryUISlot5" parent="CanvasLayer/ShopInventoryUI/NinePatchRect/GridContainer" instance=ExtResource("6_c2x4o")]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ShopInventoryUI/NinePatchRect/GridContainer/InventoryUISlot5"]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("7_00rh2")
+centered = false
+
+[node name="InventoryUISlot6" parent="CanvasLayer/ShopInventoryUI/NinePatchRect/GridContainer" instance=ExtResource("6_c2x4o")]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ShopInventoryUI/NinePatchRect/GridContainer/InventoryUISlot6"]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("7_00rh2")
+centered = false
+
+[node name="InventoryUISlot7" parent="CanvasLayer/ShopInventoryUI/NinePatchRect/GridContainer" instance=ExtResource("6_c2x4o")]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ShopInventoryUI/NinePatchRect/GridContainer/InventoryUISlot7"]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("7_00rh2")
+centered = false
+
+[node name="InventoryUISlot8" parent="CanvasLayer/ShopInventoryUI/NinePatchRect/GridContainer" instance=ExtResource("6_c2x4o")]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ShopInventoryUI/NinePatchRect/GridContainer/InventoryUISlot8"]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("7_00rh2")
+centered = false
+
+[node name="InventoryUISlot9" parent="CanvasLayer/ShopInventoryUI/NinePatchRect/GridContainer" instance=ExtResource("6_c2x4o")]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ShopInventoryUI/NinePatchRect/GridContainer/InventoryUISlot9"]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("7_00rh2")
+centered = false
+
+[node name="InventoryUISlot10" parent="CanvasLayer/ShopInventoryUI/NinePatchRect/GridContainer" instance=ExtResource("6_c2x4o")]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ShopInventoryUI/NinePatchRect/GridContainer/InventoryUISlot10"]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("7_00rh2")
+centered = false
+
+[node name="InventoryUISlot11" parent="CanvasLayer/ShopInventoryUI/NinePatchRect/GridContainer" instance=ExtResource("6_c2x4o")]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ShopInventoryUI/NinePatchRect/GridContainer/InventoryUISlot11"]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("7_00rh2")
+centered = false
+
+[node name="InventoryUISlot12" parent="CanvasLayer/ShopInventoryUI/NinePatchRect/GridContainer" instance=ExtResource("6_c2x4o")]
+layout_mode = 2
+sell_slot = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ShopInventoryUI/NinePatchRect/GridContainer/InventoryUISlot12"]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("8_h1uof")
+centered = false
+
+[node name="PlayerInventoryUI" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchor_left = 0.322
+anchor_top = 0.057
+anchor_right = 0.697
+anchor_bottom = 0.457
+offset_left = 10.056
+offset_top = -16.936
+offset_right = 10.056
+offset_bottom = -17.136
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_ojan8")
+inv_path = "res://inventory/player_inventory.tres"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/PlayerInventoryUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_2rrw3")
+patch_margin_left = 64
+patch_margin_top = 64
+patch_margin_right = 64
+patch_margin_bottom = 64
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/PlayerInventoryUI/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -173.0
+offset_top = -83.5
+offset_right = 97.0
+offset_bottom = 6.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 90
+theme_override_constants/v_separation = 90
+columns = 4
+
+[node name="InventoryUISlot" parent="CanvasLayer/PlayerInventoryUI/NinePatchRect/GridContainer" instance=ExtResource("6_c2x4o")]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/PlayerInventoryUI/NinePatchRect/GridContainer/InventoryUISlot"]
+texture = ExtResource("11_ixpnh")
+centered = false
+
+[node name="InventoryUISlot2" parent="CanvasLayer/PlayerInventoryUI/NinePatchRect/GridContainer" instance=ExtResource("6_c2x4o")]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/PlayerInventoryUI/NinePatchRect/GridContainer/InventoryUISlot2"]
+texture = ExtResource("11_ixpnh")
+centered = false
+
+[node name="InventoryUISlot3" parent="CanvasLayer/PlayerInventoryUI/NinePatchRect/GridContainer" instance=ExtResource("6_c2x4o")]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/PlayerInventoryUI/NinePatchRect/GridContainer/InventoryUISlot3"]
+texture = ExtResource("11_ixpnh")
+centered = false
+
+[node name="InventoryUISlot4" parent="CanvasLayer/PlayerInventoryUI/NinePatchRect/GridContainer" instance=ExtResource("6_c2x4o")]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/PlayerInventoryUI/NinePatchRect/GridContainer/InventoryUISlot4"]
+texture = ExtResource("11_ixpnh")
+centered = false
+
+[node name="InventoryUISlot5" parent="CanvasLayer/PlayerInventoryUI/NinePatchRect/GridContainer" instance=ExtResource("6_c2x4o")]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/PlayerInventoryUI/NinePatchRect/GridContainer/InventoryUISlot5"]
+texture = ExtResource("11_ixpnh")
+centered = false
+
+[node name="InventoryUISlot6" parent="CanvasLayer/PlayerInventoryUI/NinePatchRect/GridContainer" instance=ExtResource("6_c2x4o")]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/PlayerInventoryUI/NinePatchRect/GridContainer/InventoryUISlot6"]
+texture = ExtResource("11_ixpnh")
+centered = false
+
+[node name="InventoryUISlot7" parent="CanvasLayer/PlayerInventoryUI/NinePatchRect/GridContainer" instance=ExtResource("6_c2x4o")]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/PlayerInventoryUI/NinePatchRect/GridContainer/InventoryUISlot7"]
+texture = ExtResource("11_ixpnh")
+centered = false
+
+[node name="InventoryUISlot8" parent="CanvasLayer/PlayerInventoryUI/NinePatchRect/GridContainer" instance=ExtResource("6_c2x4o")]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/PlayerInventoryUI/NinePatchRect/GridContainer/InventoryUISlot8"]
+texture = ExtResource("11_ixpnh")
+centered = false
+
+[connection signal="body_entered" from="InteractionZone" to="." method="_on_interaction_zone_body_entered"]
+[connection signal="body_exited" from="InteractionZone" to="." method="_on_interaction_zone_body_exited"]
+[connection signal="timeout" from="AnimTimer" to="." method="_on_anim_timer_timeout"]

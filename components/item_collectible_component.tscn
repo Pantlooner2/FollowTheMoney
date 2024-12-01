@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://bl84jcw2da28g"]
+
+[ext_resource type="Script" path="res://components/scripts/item_collectible_component.gd" id="1_gjv5e"]
+[ext_resource type="Shader" path="res://shaders/outline.gdshader" id="2_iyd5w"]
+[ext_resource type="PackedScene" uid="uid://ukfv22udawa7" path="res://components/dowsing_component.tscn" id="3_phoy5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ww8e0"]
+radius = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_asxbh"]
+resource_local_to_scene = true
+shader = ExtResource("2_iyd5w")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/progress = null
+shader_parameter/width = 0.033
+
+[node name="ItemCollectibleComponent" type="Node2D"]
+script = ExtResource("1_gjv5e")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_ww8e0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_asxbh")
+scale = Vector2(0.25, 0.25)
+
+[node name="DowsingComponent" parent="." instance=ExtResource("3_phoy5")]

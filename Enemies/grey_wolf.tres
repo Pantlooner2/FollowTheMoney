@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="WolfStats" load_steps=4 format=3 uid="uid://d3fctswr1u4fc"]
+
+[ext_resource type="Script" path="res://scripts/unattached_scripts/attack.gd" id="1_8vgtb"]
+[ext_resource type="Script" path="res://scripts/unattached_scripts/wolf_stats.gd" id="1_mp0dw"]
+
+[sub_resource type="Resource" id="Resource_4flmb"]
+script = ExtResource("1_8vgtb")
+damage = 2
+
+[resource]
+script = ExtResource("1_mp0dw")
+wolf_type = 0
+speed = 60.0
+walk_speed = 40.0
+wander_distance = 70.0
+aggro_radius = 85.0
+aggro_time = 5.0
+attack = SubResource("Resource_4flmb")

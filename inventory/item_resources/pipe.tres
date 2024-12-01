@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://c0nhu845lnx3r"]
+
+[ext_resource type="Script" path="res://scripts/unattached_scripts/inventory_item.gd" id="1_w4bgd"]
+[ext_resource type="Texture2D" uid="uid://bossbdfm0m68n" path="res://sprites/item_icons/Pipe_Item.png" id="2_u816t"]
+
+[resource]
+script = ExtResource("1_w4bgd")
+item_type = 11
+scene_path = "res://scenes/items/pipe_item.tscn"
+is_tool = false
+texture = ExtResource("2_u816t")
+base_price = 15

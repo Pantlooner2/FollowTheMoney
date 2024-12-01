@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://btn48104jhpjv"]
+
+[ext_resource type="PackedScene" uid="uid://bl84jcw2da28g" path="res://components/item_collectible_component.tscn" id="1_j80cx"]
+[ext_resource type="Resource" uid="uid://df78dqfh54u73" path="res://inventory/item_resources/pocket_watch.tres" id="2_7m2ak"]
+
+[node name="PocketWatchItem" type="Node2D"]
+
+[node name="ItemCollectibleComponent" parent="." instance=ExtResource("1_j80cx")]
+item = ExtResource("2_7m2ak")

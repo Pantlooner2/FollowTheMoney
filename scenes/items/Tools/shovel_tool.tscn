@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgdgaqj1i344u"]
+
+[ext_resource type="Texture2D" uid="uid://mn4rtvy5vwct" path="res://sprites/item_icons/shovel_item.png" id="1_2li7y"]
+[ext_resource type="Script" path="res://scripts/unattached_scripts/tool.gd" id="1_xe2f4"]
+
+[node name="ShovelTool" type="Node2D"]
+script = ExtResource("1_xe2f4")
+tool_type = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(7, -3.52843e-14)
+rotation = 3.92699
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_2li7y")

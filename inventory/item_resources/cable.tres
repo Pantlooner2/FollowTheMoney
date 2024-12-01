@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://8lhww0ouxjqn"]
+
+[ext_resource type="Script" path="res://scripts/unattached_scripts/inventory_item.gd" id="1_4dk8m"]
+[ext_resource type="Texture2D" uid="uid://drbvkymy34qo4" path="res://sprites/item_icons/Cable_item.png" id="2_7d6no"]
+
+[resource]
+script = ExtResource("1_4dk8m")
+item_type = 2
+scene_path = "res://scenes/items/cable_item.tscn"
+is_tool = false
+texture = ExtResource("2_7d6no")
+base_price = 10

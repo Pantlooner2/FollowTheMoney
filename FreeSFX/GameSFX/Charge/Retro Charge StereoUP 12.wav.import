@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bts67u8lfmm32"
+path="res://.godot/imported/Retro Charge StereoUP 12.wav-f58d1eb753ea4b6dc69b911b4938e91f.sample"
+
+[deps]
+
+source_file="res://FreeSFX/GameSFX/Charge/Retro Charge StereoUP 12.wav"
+dest_files=["res://.godot/imported/Retro Charge StereoUP 12.wav-f58d1eb753ea4b6dc69b911b4938e91f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

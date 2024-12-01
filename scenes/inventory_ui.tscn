@@ -1,0 +1,210 @@
+[gd_scene load_steps=6 format=3 uid="uid://dwb2gwpbx46bj"]
+
+[ext_resource type="Script" path="res://scripts/inventory_ui.gd" id="1_5doac"]
+[ext_resource type="Texture2D" uid="uid://rcpsa5mfg6h4" path="res://sprites/InventoryUI.png" id="1_b157x"]
+[ext_resource type="Texture2D" uid="uid://bkr7ptdhglfjg" path="res://sprites/InventorySlot.png" id="2_do0su"]
+[ext_resource type="Texture2D" uid="uid://jyj1kt3bjod3" path="res://sprites/DowsingPanelUI.png" id="3_t62s5"]
+[ext_resource type="Texture2D" uid="uid://dggs8esshpfl1" path="res://sprites/DowsingRod.png" id="4_jkv64"]
+
+[node name="InventoryUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_5doac")
+
+[node name="DowsingRodBackground" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -114.0
+offset_top = 27.0
+offset_right = -677.0
+offset_bottom = -33.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_t62s5")
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="DowsingRodBackground"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 72.0
+offset_top = 55.0
+offset_right = -44.0
+offset_bottom = -61.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_jkv64")
+stretch_mode = 5
+
+[node name="Background" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(426, 226)
+layout_mode = 2
+offset_left = 358.0
+offset_top = 28.0
+offset_right = 784.0
+offset_bottom = 254.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_b157x")
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="GridContainer" type="GridContainer" parent="Background/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+columns = 4
+
+[node name="Inv1" type="TextureRect" parent="Background/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+texture = ExtResource("2_do0su")
+
+[node name="Icon" type="TextureRect" parent="Background/MarginContainer/GridContainer/Inv1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 9.0
+offset_right = -9.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Inv2" type="TextureRect" parent="Background/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+texture = ExtResource("2_do0su")
+
+[node name="Icon" type="TextureRect" parent="Background/MarginContainer/GridContainer/Inv2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 9.0
+offset_right = -9.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Inv3" type="TextureRect" parent="Background/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+texture = ExtResource("2_do0su")
+
+[node name="Icon" type="TextureRect" parent="Background/MarginContainer/GridContainer/Inv3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 9.0
+offset_right = -9.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Inv4" type="TextureRect" parent="Background/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+texture = ExtResource("2_do0su")
+
+[node name="Icon" type="TextureRect" parent="Background/MarginContainer/GridContainer/Inv4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 9.0
+offset_right = -9.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Inv5" type="TextureRect" parent="Background/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+texture = ExtResource("2_do0su")
+
+[node name="Icon" type="TextureRect" parent="Background/MarginContainer/GridContainer/Inv5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 9.0
+offset_right = -9.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Inv6" type="TextureRect" parent="Background/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+texture = ExtResource("2_do0su")
+
+[node name="Icon" type="TextureRect" parent="Background/MarginContainer/GridContainer/Inv6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 9.0
+offset_right = -9.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Inv7" type="TextureRect" parent="Background/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+texture = ExtResource("2_do0su")
+
+[node name="Icon" type="TextureRect" parent="Background/MarginContainer/GridContainer/Inv7"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 9.0
+offset_right = -9.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Inv8" type="TextureRect" parent="Background/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+texture = ExtResource("2_do0su")
+
+[node name="Icon" type="TextureRect" parent="Background/MarginContainer/GridContainer/Inv8"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 9.0
+offset_right = -9.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2

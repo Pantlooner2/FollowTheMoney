@@ -1,0 +1,94 @@
+[gd_resource type="Resource" script_class="Inventory" load_steps=22 format=3 uid="uid://do0cnf38jabo1"]
+
+[ext_resource type="Script" path="res://scripts/unattached_scripts/inventory.gd" id="1_fb0c2"]
+[ext_resource type="Script" path="res://inventory/inventory_slot.gd" id="2_fuvsk"]
+[ext_resource type="Resource" uid="uid://dj422tbuxarrl" path="res://inventory/item_resources/tool_items/shovel.tres" id="2_irima"]
+[ext_resource type="Resource" uid="uid://dmwxoqheiftdt" path="res://inventory/item_resources/tool_items/pick.tres" id="4_jyf2q"]
+[ext_resource type="Resource" uid="uid://isdkak4setbd" path="res://inventory/item_resources/speed_upgrade.tres" id="5_wtn0s"]
+
+[sub_resource type="Resource" id="Resource_kkuri"]
+script = ExtResource("2_fuvsk")
+item = ExtResource("2_irima")
+amount = 1
+player_owned = false
+
+[sub_resource type="Resource" id="Resource_484of"]
+script = ExtResource("2_fuvsk")
+item = ExtResource("4_jyf2q")
+amount = 1
+player_owned = false
+
+[sub_resource type="Resource" id="Resource_t3nur"]
+script = ExtResource("2_fuvsk")
+item = ExtResource("5_wtn0s")
+amount = 1
+player_owned = false
+
+[sub_resource type="Resource" id="Resource_ld7hy"]
+script = ExtResource("2_fuvsk")
+amount = 0
+player_owned = false
+
+[sub_resource type="Resource" id="Resource_wif41"]
+script = ExtResource("2_fuvsk")
+amount = 0
+player_owned = false
+
+[sub_resource type="Resource" id="Resource_qcxe3"]
+script = ExtResource("2_fuvsk")
+amount = 0
+player_owned = false
+
+[sub_resource type="Resource" id="Resource_k3kr4"]
+script = ExtResource("2_fuvsk")
+amount = 0
+player_owned = false
+
+[sub_resource type="Resource" id="Resource_p8ghs"]
+script = ExtResource("2_fuvsk")
+amount = 0
+player_owned = false
+
+[sub_resource type="Resource" id="Resource_kx6js"]
+script = ExtResource("2_fuvsk")
+amount = 0
+player_owned = false
+
+[sub_resource type="Resource" id="Resource_fnrt2"]
+script = ExtResource("2_fuvsk")
+amount = 0
+player_owned = false
+
+[sub_resource type="Resource" id="Resource_2ilkd"]
+script = ExtResource("2_fuvsk")
+amount = 0
+player_owned = false
+
+[sub_resource type="Resource" id="Resource_kuy7k"]
+script = ExtResource("2_fuvsk")
+amount = 0
+player_owned = false
+
+[sub_resource type="Resource" id="Resource_3lelt"]
+script = ExtResource("2_fuvsk")
+amount = 0
+player_owned = false
+
+[sub_resource type="Resource" id="Resource_0kupg"]
+script = ExtResource("2_fuvsk")
+amount = 0
+player_owned = false
+
+[sub_resource type="Resource" id="Resource_wtkv4"]
+script = ExtResource("2_fuvsk")
+amount = 0
+player_owned = false
+
+[sub_resource type="Resource" id="Resource_gq4x3"]
+script = ExtResource("2_fuvsk")
+amount = 0
+player_owned = false
+
+[resource]
+script = ExtResource("1_fb0c2")
+slots = Array[ExtResource("2_fuvsk")]([SubResource("Resource_kkuri"), SubResource("Resource_484of"), SubResource("Resource_t3nur"), SubResource("Resource_ld7hy"), SubResource("Resource_wif41"), SubResource("Resource_qcxe3"), SubResource("Resource_k3kr4"), SubResource("Resource_p8ghs"), SubResource("Resource_kx6js"), SubResource("Resource_fnrt2"), SubResource("Resource_2ilkd"), SubResource("Resource_kuy7k"), SubResource("Resource_3lelt"), SubResource("Resource_0kupg"), SubResource("Resource_wtkv4"), SubResource("Resource_gq4x3")])

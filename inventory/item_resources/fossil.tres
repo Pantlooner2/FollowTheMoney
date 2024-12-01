@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://cp3nnpdcg5ars"]
+
+[ext_resource type="Script" path="res://scripts/unattached_scripts/inventory_item.gd" id="1_5vl5k"]
+[ext_resource type="Texture2D" uid="uid://c5k1tuxlmeeiu" path="res://sprites/item_icons/fossil_item.png" id="2_ebxgq"]
+
+[resource]
+script = ExtResource("1_5vl5k")
+item_type = 15
+scene_path = "res://scenes/items/fossil_item.tscn"
+is_tool = false
+texture = ExtResource("2_ebxgq")
+base_price = 30

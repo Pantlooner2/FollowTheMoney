@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://7dilb67mj2uw"]
+
+[ext_resource type="Script" path="res://components/scripts/attack_box_component.gd" id="1_pkjkl"]
+
+[node name="AttackBoxComponent" type="Area2D"]
+collision_layer = 0
+collision_mask = 8
+monitorable = false
+script = ExtResource("1_pkjkl")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

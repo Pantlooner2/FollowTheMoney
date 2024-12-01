@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwkntn88wefqb"]
+
+[ext_resource type="PackedScene" uid="uid://col5ox71tybl1" path="res://components/resource_creator_component.tscn" id="1_p7te6"]
+[ext_resource type="PackedScene" uid="uid://kptb6kopqlq6" path="res://scenes/items/clay_item.tscn" id="2_kvs0w"]
+[ext_resource type="Texture2D" uid="uid://dp635bbeot4kq" path="res://sprites/pit.png" id="3_acbqr"]
+
+[node name="ClayDigSpot" type="Node2D"]
+
+[node name="ResourceCreatorComponent" parent="." instance=ExtResource("1_p7te6")]
+spawned_item = ExtResource("2_kvs0w")
+item_name = 3
+tool_type = 1
+max_num_spawn = 15
+min_num_spawn = 8
+spawn_range = 25
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.439216)
+position = Vector2(2.08165e-12, 2.08165e-12)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_acbqr")

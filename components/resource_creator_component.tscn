@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://col5ox71tybl1"]
+
+[ext_resource type="Script" path="res://components/scripts/resource_creator_component.gd" id="1_4j273"]
+[ext_resource type="PackedScene" uid="uid://ukfv22udawa7" path="res://components/dowsing_component.tscn" id="2_lrb1c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qqr5p"]
+
+[node name="ResourceCreatorComponent" type="Node2D"]
+script = ExtResource("1_4j273")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_qqr5p")
+
+[node name="DowsingComponent" parent="." instance=ExtResource("2_lrb1c")]
+target_items = null

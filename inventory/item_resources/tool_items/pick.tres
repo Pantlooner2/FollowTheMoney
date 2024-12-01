@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://dmwxoqheiftdt"]
+
+[ext_resource type="Script" path="res://scripts/unattached_scripts/inventory_item.gd" id="1_tucpi"]
+[ext_resource type="Texture2D" uid="uid://bwmwgewnkkv8t" path="res://sprites/item_icons/pick_item.png" id="2_guhyh"]
+
+[resource]
+script = ExtResource("1_tucpi")
+item_type = 10
+scene_path = "res://scenes/items/Tools/pick_tool.tscn"
+is_tool = true
+texture = ExtResource("2_guhyh")
+base_price = 100

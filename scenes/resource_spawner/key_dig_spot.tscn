@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cblu3t5aodljg"]
+
+[ext_resource type="PackedScene" uid="uid://col5ox71tybl1" path="res://components/resource_creator_component.tscn" id="1_trqhh"]
+[ext_resource type="PackedScene" uid="uid://lbuqasyo8q8n" path="res://scenes/items/key_item.tscn" id="2_alyh3"]
+[ext_resource type="Texture2D" uid="uid://dp635bbeot4kq" path="res://sprites/pit.png" id="3_6uhav"]
+[ext_resource type="Script" path="res://components/scripts/dowsing_component.gd" id="4_shp5l"]
+
+[node name="KeyDigSpot" type="Node2D"]
+
+[node name="ResourceCreatorComponent" parent="." instance=ExtResource("1_trqhh")]
+spawned_item = ExtResource("2_alyh3")
+item_name = 17
+tool_type = 1
+spawn_range = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.439216)
+position = Vector2(2.08165e-12, 2.08165e-12)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_6uhav")
+
+[node name="DowsingComponent" type="Node2D" parent="."]
+script = ExtResource("4_shp5l")
+target_items = Array[int]([14])

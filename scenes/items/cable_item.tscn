@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvseasmfcxu5d"]
+
+[ext_resource type="PackedScene" uid="uid://bl84jcw2da28g" path="res://components/item_collectible_component.tscn" id="1_bnffj"]
+[ext_resource type="Resource" uid="uid://8lhww0ouxjqn" path="res://inventory/item_resources/cable.tres" id="2_csnme"]
+
+[node name="CableItem" type="Node2D"]
+
+[node name="ItemCollectibleComponent" parent="." instance=ExtResource("1_bnffj")]
+item = ExtResource("2_csnme")

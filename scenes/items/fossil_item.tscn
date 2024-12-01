@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ys4julqxhawv"]
+
+[ext_resource type="PackedScene" uid="uid://bl84jcw2da28g" path="res://components/item_collectible_component.tscn" id="1_70cne"]
+[ext_resource type="Resource" uid="uid://cp3nnpdcg5ars" path="res://inventory/item_resources/fossil.tres" id="2_8hqla"]
+
+[node name="FossilItem" type="Node2D"]
+
+[node name="ItemCollectibleComponent" parent="." instance=ExtResource("1_70cne")]
+item = ExtResource("2_8hqla")

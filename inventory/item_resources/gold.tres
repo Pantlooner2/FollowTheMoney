@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://doykop2gih013"]
+
+[ext_resource type="Script" path="res://scripts/unattached_scripts/inventory_item.gd" id="1_0l0p1"]
+[ext_resource type="Texture2D" uid="uid://dwkq3j3rikglm" path="res://sprites/item_icons/gold_item.png" id="2_xpbky"]
+
+[resource]
+script = ExtResource("1_0l0p1")
+item_type = 7
+scene_path = "res://scenes/items/gold_item.tscn"
+is_tool = false
+texture = ExtResource("2_xpbky")
+base_price = 30

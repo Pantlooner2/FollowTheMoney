@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://ce65t5uvsplw4"]
+
+[ext_resource type="Script" path="res://scripts/door.gd" id="1_gkbjc"]
+[ext_resource type="PackedScene" uid="uid://ukfv22udawa7" path="res://components/dowsing_component.tscn" id="2_yq4pa"]
+
+[node name="Door" type="Area2D"]
+collision_layer = 128
+collision_mask = 2
+monitoring = false
+monitorable = false
+script = ExtResource("1_gkbjc")
+
+[node name="DowsingComponent" parent="." instance=ExtResource("2_yq4pa")]
+
+[node name="TransferTimer" type="Timer" parent="."]
+process_mode = 3
+one_shot = true
+
+[node name="EnableTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="TransferTimer" to="." method="_on_transfer_timer_timeout"]
+[connection signal="timeout" from="EnableTimer" to="." method="_on_enable_timer_timeout"]

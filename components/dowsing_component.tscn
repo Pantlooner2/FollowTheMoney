@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ukfv22udawa7"]
+
+[ext_resource type="Script" path="res://components/scripts/dowsing_component.gd" id="1_st4x6"]
+
+[node name="DowsingComponent" type="Node2D"]
+script = ExtResource("1_st4x6")

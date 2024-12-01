@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1xreuu8yw6qp"]
+
+[ext_resource type="PackedScene" uid="uid://bl84jcw2da28g" path="res://components/item_collectible_component.tscn" id="1_gybhx"]
+[ext_resource type="Resource" uid="uid://bxtna1a1seh2l" path="res://inventory/item_resources/bismuth.tres" id="2_0cg8r"]
+
+[node name="BismuthItem" type="Node2D"]
+
+[node name="ItemCollectibleComponent" parent="." instance=ExtResource("1_gybhx")]
+item = ExtResource("2_0cg8r")

@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://daoxgsjwnpl4n"]
+
+[ext_resource type="PackedScene" uid="uid://col5ox71tybl1" path="res://components/resource_creator_component.tscn" id="1_0i6po"]
+[ext_resource type="PackedScene" uid="uid://d1xreuu8yw6qp" path="res://scenes/items/bismuth_item.tscn" id="2_6cf2f"]
+[ext_resource type="Texture2D" uid="uid://bx1bh8sfe35t7" path="res://sprites/bismuth_vein.png" id="3_47xq0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pqvnj"]
+
+[node name="BismuthVein" type="Node2D"]
+
+[node name="ResourceCreatorComponent" parent="." instance=ExtResource("1_0i6po")]
+spawned_item = ExtResource("2_6cf2f")
+item_name = 1
+tool_type = 0
+max_num_spawn = 10
+min_num_spawn = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -4)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_47xq0")
+
+[node name="Area2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_pqvnj")

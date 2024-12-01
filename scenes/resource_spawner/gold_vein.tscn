@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dl64o16wd6c1s"]
+
+[ext_resource type="PackedScene" uid="uid://col5ox71tybl1" path="res://components/resource_creator_component.tscn" id="1_trhiv"]
+[ext_resource type="PackedScene" uid="uid://dtasg56psl8ps" path="res://scenes/items/gold_item.tscn" id="2_t2xoj"]
+[ext_resource type="Texture2D" uid="uid://ta6hf0x70yql" path="res://sprites/gold_vein.png" id="3_edogy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kqyuj"]
+
+[node name="GoldVein" type="Node2D"]
+
+[node name="ResourceCreatorComponent" parent="." instance=ExtResource("1_trhiv")]
+spawned_item = ExtResource("2_t2xoj")
+item_name = 7
+tool_type = 0
+max_num_spawn = 4
+min_num_spawn = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, -4)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_edogy")
+
+[node name="Area2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_kqyuj")

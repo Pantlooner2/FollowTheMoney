@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://ooqv0w2jwqyu"]
+
+[ext_resource type="PackedScene" uid="uid://col5ox71tybl1" path="res://components/resource_creator_component.tscn" id="1_mlc1r"]
+[ext_resource type="PackedScene" uid="uid://ys4julqxhawv" path="res://scenes/items/fossil_item.tscn" id="2_mwyek"]
+[ext_resource type="Texture2D" uid="uid://dp635bbeot4kq" path="res://sprites/pit.png" id="3_2f0ec"]
+[ext_resource type="Script" path="res://components/scripts/dowsing_component.gd" id="4_u64vh"]
+
+[node name="FossilDigSpot" type="Node2D"]
+
+[node name="ResourceCreatorComponent" parent="." instance=ExtResource("1_mlc1r")]
+spawned_item = ExtResource("2_mwyek")
+item_name = 15
+tool_type = 1
+max_num_spawn = 3
+spawn_range = 20
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.439216)
+position = Vector2(2.08165e-12, 2.08165e-12)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_2f0ec")
+
+[node name="DowsingComponent" type="Node2D" parent="."]
+script = ExtResource("4_u64vh")
+target_items = Array[int]([0])

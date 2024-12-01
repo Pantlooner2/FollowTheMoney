@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://mcdoe60fyqof"]
+
+[ext_resource type="PackedScene" uid="uid://bl84jcw2da28g" path="res://components/item_collectible_component.tscn" id="1_6ru6q"]
+[ext_resource type="Resource" uid="uid://isdkak4setbd" path="res://inventory/item_resources/speed_upgrade.tres" id="2_d3dfa"]
+
+[node name="StoneItem" type="Node2D"]
+
+[node name="ItemCollectibleComponent" parent="." instance=ExtResource("1_6ru6q")]
+item = ExtResource("2_d3dfa")

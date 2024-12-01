@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://bk5l1sot47hwm"]
+
+[ext_resource type="PackedScene" uid="uid://bl84jcw2da28g" path="res://components/item_collectible_component.tscn" id="1_iuerh"]
+[ext_resource type="Resource" uid="uid://dds1b5nj6iq2f" path="res://inventory/item_resources/bone.tres" id="2_l42ac"]
+[ext_resource type="PackedScene" uid="uid://bvsfyjk7gw2qm" path="res://components/health_component.tscn" id="3_gdibt"]
+[ext_resource type="PackedScene" uid="uid://bosv1atxbmdi8" path="res://components/hitbox_component.tscn" id="4_aeb11"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tjhh5"]
+radius = 2.0
+
+[node name="BoneItem" type="Node2D"]
+
+[node name="ItemCollectibleComponent" parent="." instance=ExtResource("1_iuerh")]
+item = ExtResource("2_l42ac")
+
+[node name="HealthComponent" parent="." instance=ExtResource("3_gdibt")]
+MAX_HEALTH = 6
+
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("healthComponent") instance=ExtResource("4_aeb11")]
+healthComponent = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+shape = SubResource("CircleShape2D_tjhh5")

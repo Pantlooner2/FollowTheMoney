@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dk5bvrmybcfoy"]
+
+[ext_resource type="PackedScene" uid="uid://bl84jcw2da28g" path="res://components/item_collectible_component.tscn" id="1_sapsb"]
+[ext_resource type="Resource" uid="uid://c0nhu845lnx3r" path="res://inventory/item_resources/pipe.tres" id="2_klaed"]
+
+[node name="PipeItem" type="Node2D"]
+
+[node name="ItemCollectibleComponent" parent="." instance=ExtResource("1_sapsb")]
+item = ExtResource("2_klaed")

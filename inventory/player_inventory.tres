@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="Inventory" load_steps=14 format=3 uid="uid://blq5jinm6cysl"]
+
+[ext_resource type="Script" path="res://scripts/unattached_scripts/inventory.gd" id="1_v2dsx"]
+[ext_resource type="Script" path="res://inventory/inventory_slot.gd" id="2_crs03"]
+[ext_resource type="Resource" uid="uid://cu04n8txwvuml" path="res://inventory/item_resources/tool_items/dowsing_rod.tres" id="2_q2ps0"]
+[ext_resource type="Resource" uid="uid://df78dqfh54u73" path="res://inventory/item_resources/pocket_watch.tres" id="3_np8pm"]
+[ext_resource type="Resource" uid="uid://isdkak4setbd" path="res://inventory/item_resources/speed_upgrade.tres" id="4_5mqdv"]
+
+[sub_resource type="Resource" id="Resource_m7ds8"]
+script = ExtResource("2_crs03")
+item = ExtResource("2_q2ps0")
+amount = 1
+player_owned = true
+
+[sub_resource type="Resource" id="Resource_qg13t"]
+script = ExtResource("2_crs03")
+item = ExtResource("4_5mqdv")
+amount = 10
+player_owned = true
+
+[sub_resource type="Resource" id="Resource_tuo15"]
+script = ExtResource("2_crs03")
+amount = 0
+player_owned = true
+
+[sub_resource type="Resource" id="Resource_sgxm4"]
+script = ExtResource("2_crs03")
+amount = 0
+player_owned = true
+
+[sub_resource type="Resource" id="Resource_vk4bd"]
+script = ExtResource("2_crs03")
+amount = 0
+player_owned = true
+
+[sub_resource type="Resource" id="Resource_bt8oq"]
+script = ExtResource("2_crs03")
+amount = 0
+player_owned = true
+
+[sub_resource type="Resource" id="Resource_f45h1"]
+script = ExtResource("2_crs03")
+amount = 0
+player_owned = true
+
+[sub_resource type="Resource" id="Resource_gepmr"]
+script = ExtResource("2_crs03")
+item = ExtResource("3_np8pm")
+amount = 1
+player_owned = true
+
+[resource]
+script = ExtResource("1_v2dsx")
+slots = Array[ExtResource("2_crs03")]([SubResource("Resource_m7ds8"), SubResource("Resource_qg13t"), SubResource("Resource_tuo15"), SubResource("Resource_sgxm4"), SubResource("Resource_vk4bd"), SubResource("Resource_bt8oq"), SubResource("Resource_f45h1"), SubResource("Resource_gepmr")])

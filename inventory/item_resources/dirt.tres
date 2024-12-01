@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://bc25nnrkah5tv"]
+
+[ext_resource type="Script" path="res://scripts/unattached_scripts/inventory_item.gd" id="1_nqmf0"]
+[ext_resource type="Texture2D" uid="uid://cn1oci54i51kh" path="res://sprites/item_icons/dirt_item.png" id="2_rh1l8"]
+
+[resource]
+script = ExtResource("1_nqmf0")
+item_type = 5
+scene_path = "res://scenes/items/dirt_item.tscn"
+is_tool = false
+texture = ExtResource("2_rh1l8")
+base_price = 0

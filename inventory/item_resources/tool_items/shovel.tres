@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://dj422tbuxarrl"]
+
+[ext_resource type="Script" path="res://scripts/unattached_scripts/inventory_item.gd" id="1_ok3mc"]
+[ext_resource type="Texture2D" uid="uid://mn4rtvy5vwct" path="res://sprites/item_icons/shovel_item.png" id="2_incf5"]
+
+[resource]
+script = ExtResource("1_ok3mc")
+item_type = 12
+scene_path = "res://scenes/items/Tools/shovel_tool.tscn"
+is_tool = true
+texture = ExtResource("2_incf5")
+base_price = 50
